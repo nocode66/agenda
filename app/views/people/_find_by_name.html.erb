@@ -1,0 +1,9 @@
+<%= form_tag("findbyname", method: "get") do %>
+  <div class="control-group">
+    <%= label :fn, "Search for first name:" %>
+    <div>
+      <%= telephone_field_tag :fn  %>
+      <%= submit_tag nil, :class => 'btn btn-primary' %>
+  </div>
+  </div>
+<% end %>

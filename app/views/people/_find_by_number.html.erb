@@ -1,0 +1,9 @@
+<%= form_tag("findbynumber", method: "get") do %>
+  <div class="control-group">
+    <%= label :tn, "Search for number:" %>
+    <div>
+      <%= telephone_field_tag :tn  %>
+      <%= submit_tag nil, :class => 'btn btn-primary' %>
+  </div>
+  </div>
+<% end %>

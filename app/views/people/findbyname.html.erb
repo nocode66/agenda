@@ -1,0 +1,27 @@
+<%- model_class = Person -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Full Name</th>
+      <th>Telephone</th>
+     
+    </tr>
+  </thead>
+  <tbody>
+    <% @people.each do |person| %>
+      <tr>
+      
+        <td><%= person.full_name %></td>
+        <td><%= person.telephone_number %></td>
+    
+      
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Back',people_path, :class => 'btn btn-primary' %>

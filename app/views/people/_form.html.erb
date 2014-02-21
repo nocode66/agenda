@@ -1,0 +1,53 @@
+<%= form_for @person, :html => { :class => 'form-horizontal' } do |f| %>
+<% if @person.errors.any? %>
+    <div id="error_explanation">
+      <h4><%= pluralize(@person.errors.count, "error") %> prohibited this person from being saved:</h4>
+
+     
+      <% @person.errors.full_messages.each do |msg| %>
+        <div class="alert alert-error">
+           <a class="close" href="#">×</a>
+           <%= content_tag :p, msg %>
+        </div>
+        <br />
+      <% end %>
+
+    </div>
+  <% end %>
+  <div class="control-group">
+    <%= f.label :first_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :first_name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :last_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :last_name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :address, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :address, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :telephone_number, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.telephone_field :telephone_number, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :fax_number, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :fax_number, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                people_path, :class => 'btn' %>
+  </div>
+<% end %>
